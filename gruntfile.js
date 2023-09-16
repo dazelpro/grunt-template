@@ -10,23 +10,11 @@ module.exports = function (grunt) {
 				expand: true, // Aktifkan opsi expand
 				flatten: true // Aktifkan opsi flatten
 			},
-			css: {
+			assets: {
 				expand: true,
-				cwd: "src/assets/css/",
+				cwd: "src/assets/",
 				src: "**",
-				dest: "dist/assets/css/"
-			},
-			js: {
-				expand: true,
-				cwd: "src/assets/js/",
-				src: "**",
-				dest: "dist/assets/js/"
-			},
-			images: {
-				expand: true,
-				cwd: "src/assets/images/",
-				src: "**",
-				dest: "dist/assets/images/"
+				dest: "dist/assets/"
 			}
 		},
 
@@ -39,25 +27,11 @@ module.exports = function (grunt) {
 					livereload: true // Aktifkan LiveReload agar perubahan muncul secara otomatis di browser
 				}
 			},
-			css: {
-				files: ["src/assets/css/**/*.css"],
-				tasks: ["copy:css"],
+			assets: {
+				files: ["src/assets/**"],
+				tasks: ["copy:assets"],
 				options: {
 					livereload: true // Aktifkan LiveReload agar perubahan muncul secara otomatis di browser
-				}
-			},
-			js: {
-				files: ["src/assets/js/**/*.js"], // Tambahkan pengawasan file .js di sini
-				tasks: ["copy:js"],
-				options: {
-					livereload: true // Aktifkan LiveReload agar perubahan muncul secara otomatis di browser
-				}
-			},
-			images: {
-				files: ["src/assets/images/**"], // Pemantauan folder assets/images
-				tasks: ["copy:images"], // Menyalin tugas images saat perubahan terdeteksi
-				options: {
-					livereload: true
 				}
 			}
 		},
